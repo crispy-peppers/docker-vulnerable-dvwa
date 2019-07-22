@@ -109,7 +109,8 @@ function dvwaLogout() {
 
 
 function dvwaPageReload() {
-	dvwaRedirect( $_SERVER[ 'PHP_SELF' ] );
+	//dvwaRedirect( $_SERVER[ 'PHP_SELF' ] );
+	dvwaRedirect( $_SERVER[ 'HTTP_X_ORIGINAL_URI' ] );
 }
 
 function dvwaCurrentUser() {
