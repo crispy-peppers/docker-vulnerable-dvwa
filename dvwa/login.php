@@ -28,6 +28,7 @@ if( isset( $_POST[ 'Login' ] ) ) {
 	if( mysqli_num_rows( $result ) != 1 ) {
 		dvwaMessagePush( "First time using DVWA.<br />Need to run 'setup.php'." );
 		dvwaRedirect( DVWA_WEB_PAGE_TO_ROOT . 'setup.php' );
+		#dvwaRedirect('setup.php');
 	}
 
 	$query  = "SELECT * FROM `users` WHERE user='$user' AND password='$pass';";
@@ -36,6 +37,7 @@ if( isset( $_POST[ 'Login' ] ) ) {
 		dvwaMessagePush( "You have logged in as '{$user}'" );
 		dvwaLogin( $user );
 		dvwaRedirect( DVWA_WEB_PAGE_TO_ROOT . 'index.php' );
+		#dvwaRedirect('index.php');
 	}
 
 	// Login failed

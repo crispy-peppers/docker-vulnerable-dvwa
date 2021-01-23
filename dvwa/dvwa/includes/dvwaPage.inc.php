@@ -109,7 +109,8 @@ function dvwaLogout() {
 
 
 function dvwaPageReload() {
-	dvwaRedirect( $_SERVER[ 'PHP_SELF' ] );
+	#dvwaRedirect( $_SERVER[ 'PHP_SELF' ] );
+	dvwaRedirect( $_SERVER[ 'HTTP_X_ORIGINAL_URI' ] );
 }
 
 function dvwaCurrentUser() {
@@ -330,7 +331,7 @@ function dvwaHtmlEcho( $pPage ) {
 			<div id=\"footer\">
 
 				<p>Damn Vulnerable Web Application (DVWA) v" . dvwaVersionGet() . "</p>
-				<script src='/dvwa/js/add_event_listeners.js'></script>
+				<script src='../../dvwa/js/add_event_listeners.js'></script>
 
 			</div>
 
